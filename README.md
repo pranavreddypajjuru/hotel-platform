@@ -4,5 +4,7 @@
 
 Mono-repo for hotel microservices (MySQL + MongoDB).
 
+## Connected to GitHub via IntelliJ
+
 
 

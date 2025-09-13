@@ -1,11 +1,8 @@
 # Java / Maven
 target/
-*.class
-*.jar
-*.war
-*.ear
+**/target/
 
-# IDEs
+# IDEs / Editors
 .idea/
 *.iml
 .vscode/
@@ -18,3 +15,19 @@ logs/
 # OS
 .DS_Store
 Thumbs.db
+
+# Frontend (all apps)
+**/node_modules/
+**/dist/
+**/.vite/
+**/.cache/
+**/coverage/
+
+# Env files (keep examples tracked)
+**/.env
+**/.env.*        # .env.local, .env.development, etc.
+!**/.env.example
+
+# If you NEVER want a root Node project, uncomment these:
+# /package.json
+# /package-lock.json

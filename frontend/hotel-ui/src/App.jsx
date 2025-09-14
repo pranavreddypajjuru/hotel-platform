@@ -6,16 +6,13 @@ import HotelDetails from "./pages/HotelDetails";
 import Booking from "./pages/Booking";
 import Dashboard from "./pages/Dashboard";
 import Login from "./pages/Login";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
-    const layout = { minHeight: "100vh", display: "flex", flexDirection: "column" };
-    const main = { flex: 1, padding: "16px" };
-    const footer = { background: "#f3f3f3", textAlign: "center", padding: "12px" };
-
     return (
-        <div style={layout}>
+        <div className="flex min-h-screen flex-col">
             <Navbar />
-            <main style={main}>
+            <main className="flex-1">
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/hotels" element={<Hotels />} />
@@ -23,9 +20,12 @@ export default function App() {
                     <Route path="/booking" element={<Booking />} />
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/login" element={<Login />} />
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </main>
-            <footer style={footer}>© 2025 HotelApp</footer>
+            <footer className="bg-gray-100 px-4 py-4 text-center text-sm text-gray-600">
+                © 2025 HotelApp
+            </footer>
         </div>
     );
 }

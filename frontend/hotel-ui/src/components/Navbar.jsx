@@ -1,25 +1,24 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
-    const nav = {
-        background: "#0d6efd",
-        color: "white",
-        padding: "12px 16px",
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-    };
-    const links = { display: "flex", gap: "14px" };
+    const linkClass = ({ isActive }) =>
+        `px-2 py-1 rounded hover:bg-white/10 transition ${
+            isActive ? "bg-white/10" : ""
+        }`;
 
     return (
-        <nav style={nav}>
-            <strong>HotelApp</strong>
-            <div style={links}>
-                <Link to="/" style={{ color: "white" }}>Home</Link>
-                <Link to="/hotels" style={{ color: "white" }}>Hotels</Link>
-                <Link to="/booking" style={{ color: "white" }}>Booking</Link>
-                <Link to="/dashboard" style={{ color: "white" }}>Dashboard</Link>
-                <Link to="/login" style={{ color: "white" }}>Login</Link>
+        <nav className="sticky top-0 z-50 bg-blue-600 text-white shadow">
+            <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+                <Link to="/" className="text-lg font-semibold tracking-tight">
+                    HotelApp
+                </Link>
+                <div className="flex gap-2 text-sm">
+                    <NavLink to="/" className={linkClass} end>Home</NavLink>
+                    <NavLink to="/hotels" className={linkClass}>Hotels</NavLink>
+                    <NavLink to="/booking" className={linkClass}>Booking</NavLink>
+                    <NavLink to="/dashboard" className={linkClass}>Dashboard</NavLink>
+                    <NavLink to="/login" className={linkClass}>Login</NavLink>
+                </div>
             </div>
         </nav>
     );
